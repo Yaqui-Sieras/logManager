@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>logManager</title>
+  <link rel="stylesheet" href="https://yaqui-sieras.github.io/miResetCSS/miReset.css">
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+  <div class="pag">
+    <header class="pag__header">
+      <span class="header__title">logManager</span>
+    </header>
+    <div class="pag__content">
+      <main class="content__main">
+        <h1>Bienvenido a la documentación de logManager</h1>
+        <p>Aquí encontrarás toda la información necesaria para utilizar y manejar el paquete logManager.</p>
+
+        <h2 id="descripcion">📌 Descripción</h2>
+        <p>
+          Sistema modular de logging con soporte para múltiples formatos (<code>txt</code>, <code>json</code>), niveles
+          de log y gestión eficiente de registros.
+        </p>
+
+        <h2 id="instalacion">🛠 Instalación</h2>
+        <ol>
+          <li>
+            Instala el paquete <code>logManager</code> en tu proyecto utilizando npm o el gestor de paquetes de tu
+            preferencia.
+            <pre><code class="language-bash">npm install logManager</code></pre>
+          </li>
+          <li>Listo, puedes empezar a utilizar el paquete en tu código.</li>
+        </ol>
+
+        <h2 id="estructura_proyecto">📂 Estructura del proyecto</h2>
+        <pre><code>logManager
+├── src
+│   ├── configs
+│   │   └── logConfig.js
+│   ├── services
+│   │   └── guardarLog.js
+│   ├── utils
+│   │   └── constantes.js
+│   └── main.js
+├── .gitignore
+├── CHANGELOG.md
+├── LICENSE
+├── package.json
+└── README.md
+        </code></pre>
+
+        <h2 id="uso">🚀 Uso</h2>
+        <pre><code class="language-javascript">import { log } from &quot;logManager&quot;;
+
+log({ tipo: &quot;INFO&quot;, mensaje: &quot;Servidor iniciado correctamente&quot; });
+        </code></pre>
+        <p>Este módulo permite registrar logs en distintos formatos según la configuración establecida. El módulo se
+          encarga de escribir los registros en el archivo de registros correspondiente, así como manejar el nivel de log
+          y la gestión eficiente de los registros.</p>
+
+        <h2 id="configuracion">⚙️ Configuración</h2>
+        <p>La configuración de logManager se encuentra en el archivo <code>logConfig.js</code>. Este archivo contiene
+          las siguientes propiedades:</p>
+        <pre><code class="language-javascript">export const LOG_CONFIG = {
+  nameFile: &quot;app&quot;, // Nombre del archivo de log
+  extensionBase: &quot;.log&quot;, // Extensión base del log
+  rutaDirectory: &quot;./logs/&quot;, // Carpeta donde se almacenan los logs
+  formato: LOG_FORMATOS_VALIDOS.TEXT.formato, // Formato por defecto (txt/json)
+  encoding: &quot;utf-8&quot;,
+  save: false, // Determina si los logs deben ser guardados en archivos
+};
+        </code></pre>
+
+        <h2 id="📝-ejemplo-de-uso">📝 Ejemplo de uso</h2>
+        <pre><code class="language-javascript">import { log } from &quot;logManager&quot;;
+
+log({
+  nivel: LOG_LEVELS.DEBUG,
+  tipo: LOG_TYPES.INFO,
+  mensaje: &quot;Servidor iniciado correctamente&quot;,
+});
+        </code></pre>
+        <p>En este ejemplo, se registra un registro de nivel de log <code>DEBUG</code> con el tipo <code>INFO</code> y
+          el mensaje &quot;Servidor iniciado correctamente&quot;.</p>
+
+        <h2 id="proximos_desarrollos">🔥 Próximos desarrollos</h2>
+        <ul>
+          <li>Implementar <strong>rotación de logs</strong> para evitar acumulación innecesaria.</li>
+          <li>Agregar soporte para nuevos formatos de registro (<code>.CSV</code>, <code>.XML</code>).</li>
+          <li>Permitir configuración dinámica a través de un archivo externo o variables de entorno.</li>
+          <li>Integración con herramientas de monitoreo.</li>
+        </ul>
+
+        <h2 id="licencia">📜 Licencia</h2>
+        <p>Este proyecto está bajo licencia MIT, lo que permite su uso y modificación libremente.</p>
+      </main>
+    </div>
+    <footer class="pag__footer">
+      <p>Desarrollado por <a href="https://yaqui-sieras.github.io/Porfolio">Yaqueline Maialy</a></p>
+    </footer>
+  </div>
+</body>
+
+</html>
