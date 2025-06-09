@@ -1,0 +1,32 @@
+{
+  "name": "log_manager",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Sistema modular de logging con soporte para múltiples formatos (`txt`, `json`), niveles de log y gestión eficiente de registros.",
+  "keywords": [
+    "log",
+    "logging",
+    "logger",
+    "logManager",
+    "log-manager",
+    "logging-manager",
+    "modular-logging",
+    "modular-logger",
+    "modular-log-manager",
+    "modular-logging-manager"
+  ],
+  "author": "Yaqueline Maialy <sieras.yaqui94@gmail.com> (https://yaqui-sieras.github.io)",
+  "license": "MIT",
+  "main": "src/main.js",
+  "homepage": "https://yaqui-sieras.github.io/logManager",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yaqui-Sieras/logManager"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/Yaqui-Sieras/logManager/issues"
+  }
+}
