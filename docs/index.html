@@ -15,28 +15,52 @@
       <span class="header__title">logManager</span>
     </header>
     <div class="pag__content">
+      <aside class="content__aside">
+        <h2 class="aside__title">📌 Secciones</h2>
+        <ul class="aside__list">
+          <li><a href="#descripcion">Descripción</a></li>
+          <li><a href="#instalacion">Instalación</a></li>
+          <li><a href="#estructura_proyecto">Estructura del proyecto</a></li>
+          <li><a href="#uso">Uso</a></li>
+          <li><a href="#configuracion">Configuración</a></li>
+          <li><a href="#ejemplo_de_uso">Ejemplo de uso</a></li>
+          <li><a href="#proximos_desarrollos">Próximos desarrollos</a></li>
+          <li><a href="#licencia">Licencia</a></li>
+        </ul>
+      </aside>
+
       <main class="content__main">
-        <h1>Bienvenido a la documentación de logManager</h1>
-        <p>Aquí encontrarás toda la información necesaria para utilizar y manejar el paquete logManager.</p>
+        <section class="main__documentation">
+          <header class="documentation__header">
+            <h1 class="documentation__title">Bienvenido a la documentación de logManager</h1>
+            <p>Aquí encontrarás toda la información necesaria para utilizar y manejar el paquete logManager.</p>
+          </header>
 
-        <h2 id="descripcion">📌 Descripción</h2>
-        <p>
-          Sistema modular de logging con soporte para múltiples formatos (<code>txt</code>, <code>json</code>), niveles
-          de log y gestión eficiente de registros.
-        </p>
+          <article class="documentation__description">
+            <h2 id="descripcion" class="description__title">📌 Descripción</h2>
+            <p>
+              Sistema modular de logging con soporte para múltiples formatos (<code>txt</code>, <code>json</code>),
+              niveles
+              de log y gestión eficiente de registros.
+            </p>
+          </article>
 
-        <h2 id="instalacion">🛠 Instalación</h2>
-        <ol>
-          <li>
-            Instala el paquete <code>logManager</code> en tu proyecto utilizando npm o el gestor de paquetes de tu
-            preferencia.
-            <pre><code class="language-bash">npm install logManager</code></pre>
-          </li>
-          <li>Listo, puedes empezar a utilizar el paquete en tu código.</li>
-        </ol>
+          <article class="documentation__installation">
+            <h2 id="instalacion" class="installation__title">🛠 Instalación</h2>
+            <ol>
+              <li>
+                Instala el paquete <code>logManager</code> en tu proyecto utilizando npm o el gestor de paquetes de tu
+                preferencia.
+                <pre><code class="language-bash">npm install logManager</code></pre>
+              </li>
+              <li>Listo, puedes empezar a utilizar el paquete en tu código.</li>
+            </ol>
+          </article>
 
-        <h2 id="estructura_proyecto">📂 Estructura del proyecto</h2>
-        <pre><code>logManager
+          <article class="documentation__structure">
+            <h2 id="estructura_proyecto" class="structure__title">📂 Estructura del proyecto</h2>
+            <pre><code>
+logManager
 ├── src
 │   ├── configs
 │   │   └── logConfig.js
@@ -50,52 +74,92 @@
 ├── LICENSE
 ├── package.json
 └── README.md
-        </code></pre>
+            </code></pre>
+          </article>
 
-        <h2 id="uso">🚀 Uso</h2>
-        <pre><code class="language-javascript">import { log } from &quot;logManager&quot;;
+          <article class="documentation__usage">
+            <h2 id="uso" class="usage__title">🚀 Uso</h2>
+            <pre><code class="language-javascript">
+import { log } from &quot;logManager&quot;;
 
-log({ tipo: &quot;INFO&quot;, mensaje: &quot;Servidor iniciado correctamente&quot; });
-        </code></pre>
-        <p>Este módulo permite registrar logs en distintos formatos según la configuración establecida. El módulo se
-          encarga de escribir los registros en el archivo de registros correspondiente, así como manejar el nivel de log
-          y la gestión eficiente de los registros.</p>
+log({ 
+  tipo: &quot;INFO&quot;,
+  mensaje: &quot;Servidor iniciado correctamente&quot;
+});
+            </code></pre>
+            <p>
+              Este módulo permite registrar logs en distintos formatos según la configuración establecida. El módulo se
+              encarga de escribir los registros en el archivo de registros correspondiente, así como manejar el nivel de
+              log
+              y la gestión eficiente de los registros.
+            </p>
+          </article>
 
-        <h2 id="configuracion">⚙️ Configuración</h2>
-        <p>La configuración de logManager se encuentra en el archivo <code>logConfig.js</code>. Este archivo contiene
-          las siguientes propiedades:</p>
-        <pre><code class="language-javascript">export const LOG_CONFIG = {
-  nameFile: &quot;app&quot;, // Nombre del archivo de log
-  extensionBase: &quot;.log&quot;, // Extensión base del log
-  rutaDirectory: &quot;./logs/&quot;, // Carpeta donde se almacenan los logs
-  formato: LOG_FORMATOS_VALIDOS.TEXT.formato, // Formato por defecto (txt/json)
+          <article class="documentation__configuration">
+            <h2 id="configuracion" class="configuration__title">⚙️ Configuración</h2>
+            <p>
+              La configuración de logManager se encuentra en el archivo <code>logConfig.js</code>. Este archivo
+              contiene
+              las siguientes propiedades:
+            </p>
+            <pre><code class="language-javascript">
+export const LOG_CONFIG = {
+  // Nombre del archivo de log
+  nameFile: &quot;app&quot;,
+
+  // Extensión base del log
+  extensionBase: &quot;.log&quot;,
+
+  // Carpeta donde se almacenan los logs
+  rutaDirectory: &quot;./logs/&quot;,
+
+  // Formato por defecto (txt/json)
+  formato: LOG_FORMATOS_VALIDOS.TEXT.formato,
+  
   encoding: &quot;utf-8&quot;,
-  save: false, // Determina si los logs deben ser guardados en archivos
+  
+  /*
+  Determina si los logs seran guardados
+  en archivos o no
+  */
+  save: false,
 };
-        </code></pre>
+            </code></pre>
+          </article>
 
-        <h2 id="📝-ejemplo-de-uso">📝 Ejemplo de uso</h2>
-        <pre><code class="language-javascript">import { log } from &quot;logManager&quot;;
+          <article class="documentation__example">
+            <h2 id="ejemplo_de_uso" class="example__title">📝 Ejemplo de uso</h2>
+            <pre><code class="language-javascript">
+import { log } from &quot;logManager&quot;;
 
 log({
   nivel: LOG_LEVELS.DEBUG,
   tipo: LOG_TYPES.INFO,
   mensaje: &quot;Servidor iniciado correctamente&quot;,
 });
-        </code></pre>
-        <p>En este ejemplo, se registra un registro de nivel de log <code>DEBUG</code> con el tipo <code>INFO</code> y
-          el mensaje &quot;Servidor iniciado correctamente&quot;.</p>
+            </code></pre>
+            <p>
+              En este ejemplo, se registra un registro de nivel de log <code>DEBUG</code> con el tipo <code>INFO</code>
+              y el mensaje &quot;Servidor iniciado correctamente&quot;.
+            </p>
+          </article>
 
-        <h2 id="proximos_desarrollos">🔥 Próximos desarrollos</h2>
-        <ul>
-          <li>Implementar <strong>rotación de logs</strong> para evitar acumulación innecesaria.</li>
-          <li>Agregar soporte para nuevos formatos de registro (<code>.CSV</code>, <code>.XML</code>).</li>
-          <li>Permitir configuración dinámica a través de un archivo externo o variables de entorno.</li>
-          <li>Integración con herramientas de monitoreo.</li>
-        </ul>
+          <article class="documentation__future">
+            <h2 id="proximos_desarrollos" class="future__title">🔥 Próximos desarrollos</h2>
+            <ul>
+              <li>Implementar <strong>rotación de logs</strong> para evitar acumulación innecesaria.</li>
+              <li>Agregar soporte para nuevos formatos de registro (<code>.CSV</code>, <code>.XML</code>).</li>
+              <li>Permitir configuración dinámica a través de un archivo externo o variables de entorno.</li>
+              <li>Integración con herramientas de monitoreo.</li>
+            </ul>
+          </article>
 
-        <h2 id="licencia">📜 Licencia</h2>
-        <p>Este proyecto está bajo licencia MIT, lo que permite su uso y modificación libremente.</p>
+          <article class="documentation__license">
+            <h2 id="licencia" class="license__title">📜 Licencia</h2>
+            <p>Este proyecto está bajo licencia MIT, lo que permite su uso y modificación libremente.</p>
+          </article>
+
+        </section>
       </main>
     </div>
     <footer class="pag__footer">
